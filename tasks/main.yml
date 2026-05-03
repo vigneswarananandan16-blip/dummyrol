@@ -1,0 +1,15 @@
+---
+# tasks file for testi
+#
+- name: Install apache server
+  ansible.builtin.package:
+    name: "{{ apache_pkg }}"
+    state: present
+
+- name: Copy file with owner & permissions
+  ansible.builtin.copy:
+    src: files/firstpage.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'

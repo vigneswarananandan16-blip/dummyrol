@@ -1,0 +1,4 @@
+---
+# vars file for testi
+#
+    apache_pkg: "{{ 'apache2' if ansible_os_family == 'Debian' else 'httpd' }}"
